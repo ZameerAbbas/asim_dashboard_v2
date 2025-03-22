@@ -247,6 +247,7 @@ const SpecialOffer = () => {
   };
   const startEditing = (key, data) => {
     setEditMode(true);
+    setIsOpenEdit(true)
     setEditRecordKey(key);
     setEditedofferData({
       ...data,
