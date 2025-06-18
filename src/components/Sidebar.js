@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/no-redundant-roles */
 
 
 
@@ -19,7 +21,6 @@ import {
   Bars3Icon,
   BellIcon,
   CalendarIcon,
-  ChartPieIcon,
   Cog6ToothIcon,
   DocumentDuplicateIcon,
   FolderIcon,
@@ -27,7 +28,8 @@ import {
   UsersIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
-import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/react/20/solid'
+import { ChevronDownIcon,  } from '@heroicons/react/20/solid'
+import { getAuth, signOut } from "firebase/auth";
 
 const navigation = [
   { name: 'Dashboard', href: '/', icon: HomeIcon, current: true },
@@ -40,9 +42,9 @@ const navigation = [
 ]
 
 const userNavigation = [
-  { name: 'Your profile', href: '' },
-  { name: 'Sign out', href: '' },
-]
+  { name: 'Your profile', href: '/profile' },
+  { name: 'Sign out', href: '/', action: 'logout' }, // Add `action` for logout
+];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -50,6 +52,8 @@ function classNames(...classes) {
 
 export default function Example({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
+
+  const auth = getAuth();
 
   return (
     <>
@@ -220,16 +224,31 @@ export default function Example({ children }) {
                     transition
                     className="absolute right-0 z-10 mt-2.5 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
                   >
-                    {userNavigation.map((item) => (
-                      <MenuItem key={item.name}>
-                        <a
-                          href={item.href}
-                          className="block px-3 py-1 text-sm/6 text-gray-900 data-[focus]:bg-gray-50 data-[focus]:outline-none"
-                        >
-                          {item.name}
-                        </a>
-                      </MenuItem>
-                    ))}
+                   {userNavigation.map((item) => (
+  <MenuItem key={item.name}>
+    <button
+      onClick={() => {
+        if (item.action === 'logout') {
+          signOut(auth)
+            .then(() => {
+              console.log("User signed out");
+           
+              window.location.href = '/'; 
+            })
+            .catch((error) => {
+              console.error("Error signing out:", error);
+            });
+        } else {
+          window.location.href = item.href;
+        }
+      }}
+      className="block w-full text-left px-3 py-1 text-sm/6 text-gray-900 data-[focus]:bg-gray-50 data-[focus]:outline-none"
+    >
+      {item.name}
+    </button>
+  </MenuItem>
+))}
+
                   </MenuItems>
                 </Menu>
               </div>
