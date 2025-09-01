@@ -124,6 +124,9 @@ const MineralsDashboard = () => {
       reader.readAsDataURL(imageFile);
     }
   };
+
+
+  
   const handleImageChangesub = (event) => {
     const imageFile = event.target.files[0];
     if (imageFile) {
@@ -627,8 +630,16 @@ const MineralsDashboard = () => {
                     className="w-full mt-1 p-2 border border-gray-300 rounded-md"
                   />
                   {editedMineralData.mineralImageURL && (
-                    <img src={editedMineralData.mineralImageURL} alt="Preview" className="mt-2 w-32 h-32 rounded-lg" />
-                  )}
+                 <>   <img src={editedMineralData.mineralImageURL} alt="Preview" className="mt-2 w-32 h-32 rounded-lg" />
+                <button onClick={()=>{
+                      setEditedMineralData((pre)=>({
+                        ...pre,
+                        mineralImage:null,
+                        mineralImageURL:""
+                      }))
+                    }}>x</button>
+                    </>
+                )}
                 </div>
                 <div className="mt-4">
                   <label className="block text-sm font-medium text-gray-700">Sub Image</label>
@@ -639,7 +650,16 @@ const MineralsDashboard = () => {
                     className="w-full mt-1 p-2 border border-gray-300 rounded-md"
                   />
                   {editedMineralData.mineralImagesubURL && (
+                    <>
                     <img src={editedMineralData.mineralImagesubURL} alt="Preview" className="mt-2 w-32 h-32 rounded-lg" />
+                    <button onClick={()=>{
+                      setEditedMineralData((pre)=>({
+                        ...pre,
+                        mineralImage:null,
+                        mineralImagesubURL:""
+                      }))
+                    }}>x</button>
+                    </>
                   )}
                 </div>
                 <div className="mt-4">
@@ -651,7 +671,15 @@ const MineralsDashboard = () => {
                     className="w-full mt-1 p-2 border border-gray-300 rounded-md"
                   />
                   {editedMineralData.mineralImagesubURLT && (
-                    <img src={editedMineralData.mineralImagesubURLT} alt="Preview" className="mt-2 w-32 h-32 rounded-lg" />
+                  
+                  <>
+                  <img src={editedMineralData.mineralImagesubURLT} alt="Preview" className="mt-2 w-32 h-32 rounded-lg" />
+                  <button onClick={()=>setEditedMineralData((pre)=>({
+                    ...pre,
+                      mineralImagesubT:null,
+                    mineralImagesubURLT:""
+                  }))}>x</button>
+                  </>
                   )}
                 </div>
                 <div className="mt-4">
@@ -663,7 +691,14 @@ const MineralsDashboard = () => {
                     className="w-full mt-1 p-2 border border-gray-300 rounded-md"
                   />
                   {editedMineralData.mineralImagesubURLTH && (
-                    <img src={editedMineralData.mineralImagesubURLTH} alt="Preview" className="mt-2 w-32 h-32 rounded-lg" />
+                  <>  <img src={editedMineralData.mineralImagesubURLTH} alt="Preview" className="mt-2 w-32 h-32 rounded-lg" />
+                  
+                    <button onClick={()=>setEditedMineralData((pre)=>({
+                    ...pre,
+                      mineralImagesubTH:null,
+                    mineralImagesubURLTH:""
+                  }))}>x</button>
+                  </>
                   )}
                 </div>
 

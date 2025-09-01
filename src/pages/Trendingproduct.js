@@ -313,11 +313,7 @@ const Trendingproduct = () => {
 
   return (
     <div className="Dashboardconatainer">
-      <div className="logperson">
-        <p className="Toptext">
-          <Logout />
-        </p>
-      </div>
+   
     
 
     <div className="">
@@ -348,12 +344,12 @@ const Trendingproduct = () => {
           <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
             <DialogPanel className="w-full max-w-lg rounded-xl bg-white p-4 shadow-lg">
               <DialogTitle as="h3" className="text-lg font-medium text-gray-900">
-                Create a New Special Offer
+                Create a New 
               </DialogTitle>
 
               <div className="max-h-[80vh] overflow-y-auto">
                 <div className="mt-4">
-                  <label className="block text-sm font-medium text-gray-700">Offer item Name</label>
+                  <label className="block text-sm font-medium text-gray-700"> item Name</label>
                   <input
                     type="text"
                     name="trendingName"
@@ -365,7 +361,7 @@ const Trendingproduct = () => {
                 </div>
 
                 <div className="mt-4">
-                  <label className="block text-sm font-medium text-gray-700">Offer item Weight</label>
+                  <label className="block text-sm font-medium text-gray-700"> item Weight</label>
                   <input
                     type="text"
                     name="trendingWeight"
@@ -377,7 +373,7 @@ const Trendingproduct = () => {
                 </div>
 
                 <div className="mt-4">
-                  <label className="block text-sm font-medium text-gray-700"> Offer item InStock </label>
+                  <label className="block text-sm font-medium text-gray-700">  item InStock </label>
                   <input
                     type="text"
                     name="trendingInStock"
@@ -388,7 +384,7 @@ const Trendingproduct = () => {
                 </div>
 
                 <div className="mt-4">
-                  <label className="block text-sm font-medium text-gray-700">Offer item Price ($)</label>
+                  <label className="block text-sm font-medium text-gray-700"> item Price ($)</label>
                   <input
                     type="number"
                     name="trendingPrice"
@@ -570,12 +566,12 @@ const Trendingproduct = () => {
           <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
             <DialogPanel className="w-full max-w-lg rounded-xl bg-white p-4 shadow-lg">
               <DialogTitle as="h3" className="text-lg font-medium text-gray-900">
-                Edit  a Special Offer 
+                Edit  a  Trending 
               </DialogTitle>
 
               <div className="max-h-[80vh] overflow-y-auto">
                 <div className="mt-4">
-                  <label className="block text-sm font-medium text-gray-700">Offer item Name</label>
+                  <label className="block text-sm font-medium text-gray-700"> item Name</label>
                   <input
                     type="text"
                     name="trendingName"
@@ -587,7 +583,7 @@ const Trendingproduct = () => {
                 </div>
 
                 <div className="mt-4">
-                  <label className="block text-sm font-medium text-gray-700">Offer item Weight</label>
+                  <label className="block text-sm font-medium text-gray-700"> item Weight</label>
                   <input
                     type="text"
                     name="trendingWeight"
@@ -599,7 +595,7 @@ const Trendingproduct = () => {
                 </div>
 
                 <div className="mt-4">
-                  <label className="block text-sm font-medium text-gray-700"> Offer item InStock </label>
+                  <label className="block text-sm font-medium text-gray-700">  item InStock </label>
                   <input
                     type="text"
                     name="trendingInStock"
@@ -610,7 +606,7 @@ const Trendingproduct = () => {
                 </div>
 
                 <div className="mt-4">
-                  <label className="block text-sm font-medium text-gray-700">Offer item Price ($)</label>
+                  <label className="block text-sm font-medium text-gray-700"> item Price ($)</label>
                   <input
                     type="number"
                     name="trendingPrice"
@@ -635,7 +631,7 @@ const Trendingproduct = () => {
 
                 {/* Image Upload */}
                 <div className="mt-4">
-                  <label className="block text-sm font-medium text-gray-700"> Offer Itme Main Image</label>
+                  <label className="block text-sm font-medium text-gray-700">  Itme Main Image</label>
                   <input
                     type="file"
                     accept="image/*"

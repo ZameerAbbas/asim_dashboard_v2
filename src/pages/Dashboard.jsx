@@ -75,46 +75,68 @@ export default function Example() {
     }));
   };
 
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setNewGemData((prevData) => ({
-        ...prevData,
-        gemImage: file,
-        gemImageURL: URL.createObjectURL(file),
-      }));
+
+
+
+  const handleImageChange = (event) => {
+    const imageFile = event.target.files[0];
+    if (imageFile) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setNewGemData((prevData) => ({
+          ...prevData,
+          gemImage: imageFile,
+          gemImageURL: reader.result,
+        }));
+      };
+      reader.readAsDataURL(imageFile);
     }
   };
-  const handleImageChangesub1 = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setNewGemData((prevData) => ({
-        ...prevData,
-        gemImagesub: file,
-        gemImageURLsub: URL.createObjectURL(file),
-      }));
+  const handleImageChangesub1 = (event) => {
+    const imageFile = event.target.files[0];
+    if (imageFile) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setNewGemData((prevData) => ({
+          ...prevData,
+          gemImagesub: imageFile,
+          gemImageURLsub: reader.result,
+        }));
+      };
+      reader.readAsDataURL(imageFile);
     }
   };
-  const handleImageChangesub2 = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setNewGemData((prevData) => ({
-        ...prevData,
-        gemImagesubt: file,
-        gemImageURLT: URL.createObjectURL(file),
-      }));
+
+  const handleImageChangesub2 = (event) => {
+    const imageFile = event.target.files[0];
+    if (imageFile) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setNewGemData((prevData) => ({
+          ...prevData,
+          gemImagesubt: imageFile,
+          gemImageURLT: reader.result,
+        }));
+      };
+      reader.readAsDataURL(imageFile);
     }
   };
-  const handleImageChangesub3 = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setNewGemData((prevData) => ({
-        ...prevData,
-        gemImagesubth: file,
-        gemImageURLTh: URL.createObjectURL(file),
-      }));
+  const handleImageChangesub3 = (event) => {
+    const imageFile = event.target.files[0];
+    if (imageFile) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setNewGemData((prevData) => ({
+          ...prevData,
+          gemImagesubth: imageFile,
+          gemImageURLTh: reader.result,
+        }));
+      };
+      reader.readAsDataURL(imageFile);
     }
   };
+
+
 
   const createNewRecord = () => {
     if (!newGemData.gemName || !newGemData.gemPrice) {
@@ -128,7 +150,6 @@ export default function Example() {
       gemPrice: parseFloat(newGemData.gemPrice),
     })
       .then(() => {
-        alert("New gem added successfully!");
         setNewGemData({
           gemName: "",
           gemWeight: "",
@@ -144,7 +165,7 @@ export default function Example() {
           gemImagesubth: null,
           gemImageURLTh: "",
         });
-        setIsOpen(false);
+        close();
       })
       .catch((error) => {
         alert("Error creating gem: " + error.message);
@@ -177,46 +198,64 @@ export default function Example() {
     }));
   };
 
-  const handleImageChangeEdit = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setEditGemData((prevData) => ({
-        ...prevData,
-        gemImage: file,
-        gemImageURL: URL.createObjectURL(file),
-      }));
+  const handleImageChangeEdit = (event) => {
+    const imageFile = event.target.files[0];
+    if (imageFile) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setNewGemData((prevData) => ({
+          ...prevData,
+          gemImage: imageFile,
+          gemImageURL: reader.result,
+        }));
+      };
+      reader.readAsDataURL(imageFile);
     }
   };
-  const handleImageChangesub1Edit = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setEditGemData((prevData) => ({
-        ...prevData,
-        gemImagesub: file,
-        gemImageURLsub: URL.createObjectURL(file),
-      }));
+  const handleImageChangesub1Edit = (event) => {
+    const imageFile = event.target.files[0];
+    if (imageFile) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setNewGemData((prevData) => ({
+          ...prevData,
+          gemImagesub: imageFile,
+          gemImageURLsub: reader.result,
+        }));
+      };
+      reader.readAsDataURL(imageFile);
     }
   };
-  const handleImageChangesub2Edit = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setEditGemData((prevData) => ({
-        ...prevData,
-        gemImagesubt: file,
-        gemImageURLT: URL.createObjectURL(file),
-      }));
+  const handleImageChangesub2Edit = (event) => {
+    const imageFile = event.target.files[0];
+    if (imageFile) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setNewGemData((prevData) => ({
+          ...prevData,
+          gemImagesubt: imageFile,
+          gemImageURLT: reader.result,
+        }));
+      };
+      reader.readAsDataURL(imageFile);
     }
   };
-  const handleImageChangesub3Edit = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setEditGemData((prevData) => ({
-        ...prevData,
-        gemImagesubth: file,
-        gemImageURLTh: URL.createObjectURL(file),
-      }));
+  const handleImageChangesub3Edit = (event) => {
+    const imageFile = event.target.files[0];
+    if (imageFile) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setNewGemData((prevData) => ({
+          ...prevData,
+          gemImagesubth: imageFile,
+          gemImageURLTh: reader.result,
+        }));
+      };
+      reader.readAsDataURL(imageFile);
     }
   };
+
+
 
 
 
@@ -537,12 +576,12 @@ export default function Example() {
 
       <Dialog open={isOpenEdit} as="div" className="relative z-50" onClose={close}>
         <div className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
-          <DialogPanel className="w-full max-w-lg rounded-xl bg-white p-4 shadow-lg ">
+          <DialogPanel className="w-full max-w-xl rounded-xl bg-white p-4 shadow-lg ">
             <DialogTitle as="h3" className="text-lg font-medium text-gray-900">
               Create a New Gem
             </DialogTitle>
 
-            <div className="max-h-[80vh] overflow-y-auto">
+            <div className="max-h-[80vh] overflow-y-auto overflow-x-hidden">
               <div className="mt-4">
                 <label className="block text-sm font-medium text-gray-700">Gem Name</label>
                 <input
@@ -610,9 +649,22 @@ export default function Example() {
                   className="w-full mt-1 p-2 border border-gray-300 rounded-md"
                 />
                 {editGemData.gemImageURL && (
-                  <img src={editGemData.gemImageURL} alt="Preview" className="mt-2 w-32 h-32 rounded-lg" />
+                  <>
+                    <img src={editGemData.gemImageURL} alt="Preview" className="mt-2 w-32 h-32 rounded-lg" />
+                    <button
+                      onClick={() =>
+                        setEditGemData((prev) => ({
+                          ...prev,
+                          gemImage: null,
+                          gemImageURL: "",
+                        }))
+                      }
+                    >x</button>
+                  </>
                 )}
               </div>
+
+              
               <div className="mt-4">
                 <label className="block text-sm font-medium text-gray-700">Sub Image</label>
                 <input
@@ -621,8 +673,19 @@ export default function Example() {
                   onChange={handleImageChangesub1Edit}
                   className="w-full mt-1 p-2 border border-gray-300 rounded-md"
                 />
-                {editGemData.gemImagesub && (
-                  <img src={editGemData.gemImagesub} alt="Preview" className="mt-2 w-32 h-32 rounded-lg" />
+                {editGemData.gemImageURLsub && (
+                  <>
+                    <img src={editGemData.gemImageURLsub} alt="Preview" className="mt-2 w-32 h-32 rounded-lg" />
+                    <button
+                      onClick={() =>
+                        setEditGemData((prev) => ({
+                          ...prev,
+                          gemImagesub: null,
+                          gemImageURLsub: "",
+                        }))
+                      }
+                    >x</button>
+                  </>
                 )}
               </div>
               <div className="mt-4">
@@ -633,8 +696,20 @@ export default function Example() {
                   onChange={handleImageChangesub2Edit}
                   className="w-full mt-1 p-2 border border-gray-300 rounded-md"
                 />
-                {editGemData.gemImagesubt && (
-                  <img src={editGemData.gemImagesubt} alt="Preview" className="mt-2 w-32 h-32 rounded-lg" />
+                {editGemData.gemImageURLT && (
+                  <>
+                    <img src={editGemData.gemImageURLT} alt="Preview" className="mt-2 w-32 h-32 rounded-lg" />
+                    <button
+                      onClick={() =>
+                        setEditGemData((prev) => ({
+                          ...prev,
+                          gemImagesubt: null,
+                          gemImageURLT: "",
+                        }))
+                      }
+                    >x</button>
+                  </>
+
                 )}
               </div>
               <div className="mt-4">
@@ -645,8 +720,20 @@ export default function Example() {
                   onChange={handleImageChangesub3Edit}
                   className="w-full mt-1 p-2 border border-gray-300 rounded-md"
                 />
-                {editGemData.gemImagesubth && (
-                  <img src={editGemData.gemImagesubth} alt="Preview" className="mt-2 w-32 h-32 rounded-lg" />
+                {editGemData.gemImageURLTh && (
+                  <>
+                    <img src={editGemData.gemImageURLTh} alt="Preview" className="mt-2 w-32 h-32 rounded-lg" />
+
+                    <button
+                      onClick={() =>
+                        setEditGemData((prev) => ({
+                          ...prev,
+                          gemImagesubth: null,
+                          gemImageURLTh: "",
+                        }))
+                      }
+                    >x</button>
+                  </>
                 )}
               </div>
 
@@ -668,7 +755,7 @@ export default function Example() {
             </div>
           </DialogPanel>
         </div>
-      </Dialog>
+      </Dialog >
 
 
     </div >

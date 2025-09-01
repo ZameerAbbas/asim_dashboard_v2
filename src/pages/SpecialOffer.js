@@ -668,7 +668,14 @@ const SpecialOffer = () => {
                     className="w-full mt-1 p-2 border border-gray-300 rounded-md"
                   />
                   {editedofferData.offerImageURL && (
-                    <img src={editedofferData.offerImageURL} alt="Preview" className="mt-2 w-32 h-32 rounded-lg" />
+                   <>
+                   <img src={editedofferData.offerImageURL} alt="Preview" className="mt-2 w-32 h-32 rounded-lg" />
+                     <button onClick={()=>setEditedofferData((pre)=>({
+                    ...pre,
+                      offerImage:null,
+                    offerImageURL:""
+                  }))}>x</button>
+                   </>
                   )}
                 </div>
                 <div className="mt-4">
@@ -680,7 +687,15 @@ const SpecialOffer = () => {
                     className="w-full mt-1 p-2 border border-gray-300 rounded-md"
                   />
                   {editedofferData.offerImagesubURL && (
-                    <img src={editedofferData.offerImagesubURL} alt="Preview" className="mt-2 w-32 h-32 rounded-lg" />
+                  <>
+                  <img src={editedofferData.offerImagesubURL} alt="Preview" className="mt-2 w-32 h-32 rounded-lg" />
+                  
+                  <button onClick={()=>setEditedofferData((pre)=>({
+                    ...pre,
+                      offerImagesub:null,
+                    offerImagesubURL:""
+                  }))}>x</button>
+                  </>
                   )}
                 </div>
                 <div className="mt-4">
@@ -692,7 +707,18 @@ const SpecialOffer = () => {
                     className="w-full mt-1 p-2 border border-gray-300 rounded-md"
                   />
                   {editedofferData.offerImagesubURLT && (
-                    <img src={editedofferData.offerImagesubURLT} alt="Preview" className="mt-2 w-32 h-32 rounded-lg" />
+                  
+                  
+                  <>
+                  <img src={editedofferData.offerImagesubURLT} alt="Preview" className="mt-2 w-32 h-32 rounded-lg" />
+                
+
+                  <button onClick={()=>setEditedofferData((pre)=>({
+                    ...pre,
+                      offerImagesubT:null,
+                    offerImagesubURLT:""
+                  }))}>x</button>
+                  </>
                   )}
                 </div>
                 <div className="mt-4">
@@ -704,7 +730,16 @@ const SpecialOffer = () => {
                     className="w-full mt-1 p-2 border border-gray-300 rounded-md"
                   />
                   {editedofferData.offerImagesubURLTH && (
-                    <img src={editedofferData.offerImagesubURLTH} alt="Preview" className="mt-2 w-32 h-32 rounded-lg" />
+                  <>
+                  <img src={editedofferData.offerImagesubURLTH} alt="Preview" className="mt-2 w-32 h-32 rounded-lg" />
+               
+
+                  <button onClick={()=>setEditedofferData((pre)=>({
+                    ...pre,
+                      offerImagesubTH:null,
+                    offerImagesubURLTH:""
+                  }))}>x</button>
+                  </>
                   )}
                 </div>
 
